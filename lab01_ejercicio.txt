@@ -1,0 +1,33 @@
+void main() {
+  
+  List<int> numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  // Inicializamos las variables para las sumas y los valores mayor y menor
+  int sumaPares = 0;
+  int sumaImpares = 0;
+  int menor = numeros[0];
+  int mayor = numeros[0];
+
+  for (var num in numeros) {
+    if (num % 2 == 0) {
+      // Para par
+      sumaPares += num;
+    } else {
+      // Si es impar
+      sumaImpares += num;
+    }
+
+    // Para mayor y menor
+    if (num < menor) {
+      menor = num;
+    }
+    if (num > mayor) {
+      mayor = num;
+    }
+  }
+  
+  print('Suma de pares: $sumaPares');
+  print('Suma de impares: $sumaImpares');
+  print('Número menor: $menor');
+  print('Número mayor es: $mayor');
+}
