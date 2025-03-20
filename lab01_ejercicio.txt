@@ -2,7 +2,6 @@ void main() {
   
   List<int> numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  // Inicializamos las variables para las sumas y los valores mayor y menor
   int sumaPares = 0;
   int sumaImpares = 0;
   int menor = numeros[0];
