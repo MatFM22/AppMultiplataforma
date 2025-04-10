@@ -1,0 +1,34 @@
+mixin Volador {
+  void volar() => print('Puede volar');
+}
+
+mixin Navegador {
+  void navegar() => print('Puede navegar');
+}
+
+mixin Acelerador {
+  void acelerar() => print('Puede acelerar');
+}
+
+class Avion with Volador, Acelerador {}
+
+class Bote with Navegador, Acelerador {}
+
+class Auto with Acelerador {}
+
+void main() {
+  var avion = Avion();
+  var bote = Bote();
+  var auto = Auto();
+
+  print('--- Avión ---');
+  avion.volar();
+  avion.acelerar();
+
+  print('\n--- Bote ---');
+  bote.navegar();
+  bote.acelerar();
+
+  print('\n--- Auto ---');
+  auto.acelerar();
+}

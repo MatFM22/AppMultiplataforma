@@ -1,0 +1,34 @@
+mixin LanzadorHechizos {
+  void lanzarHechizo() => print('Lanza un poderoso hechizo');
+}
+
+mixin AtacanteConArma {
+  void atacarConArma() => print('Ataca con su arma');
+}
+
+mixin Curador {
+  void curarAliado() => print('Cura a un aliado');
+}
+
+class Mago with LanzadorHechizos, Curador {}
+
+class Guerrero with AtacanteConArma {}
+
+class Paladin with AtacanteConArma, Curador {}
+
+void main() {
+  var mago = Mago();
+  var guerrero = Guerrero();
+  var paladin = Paladin();
+
+  print('--- Mago ---');
+  mago.lanzarHechizo();
+  mago.curarAliado();
+
+  print('\n--- Guerrero ---');
+  guerrero.atacarConArma();
+
+  print('\n--- Paladín ---');
+  paladin.atacarConArma();
+  paladin.curarAliado();
+}
