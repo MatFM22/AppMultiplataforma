@@ -1,0 +1,38 @@
+void main() {
+  Map<String, dynamic> dcJson = {
+    'nombrePila': 'Bruce Wayne',
+    'nombrePersonaje': 'Batman'
+  };
+  
+  DCHeroes batman = DCHeroes.fromDCJson(dcJson);
+  
+  batman.mostrarIdentidad();
+}
+
+class DCHeroes {
+  String _nombrePila;
+  String _nombrePersonaje;
+  
+  DCHeroes.fromDCJson(Map<String, dynamic> dcJson) :
+    _nombrePila = dcJson['nombrePila'] ?? "No tiene nombre",
+    _nombrePersonaje = dcJson['nombrePersonaje'] ?? "No tiene alias";
+  
+  String get nombrePila => _nombrePila;
+  String get nombrePersonaje => _nombrePersonaje;
+  
+  void mostrarIdentidad() {
+    String nombre = _nombrePila.toUpperCase();
+    String personaje = _nombrePersonaje.toUpperCase();
+    
+    if (_nombrePila == "No tiene nombre" || _nombrePersonaje == "No tiene alias") {
+      if (_nombrePila == "No tiene nombre") {
+        print("No tiene nombre");
+      }
+      if (_nombrePersonaje == "No tiene alias") {
+        print("No tiene alias");
+      }
+    } else {
+      print("Hola mi nombre es $nombre pero me conocen como el caballero de la noche $personaje");
+    }
+  }
+}
